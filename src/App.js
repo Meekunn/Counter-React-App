@@ -63,35 +63,56 @@ import React, { useState } from 'react';
 //   }
 // }
 
-function App (){
-  const initial = 0;
-  const [count, setCount] = useState(initial);
+// function App (){
+//   const initial = 0;
+//   const [count, setCount] = useState(initial);
 
-  const Increase = () =>{
-    setCount(count + 1)
-  } 
+//   const Increase = () =>{
+//     setCount(count + 1)
+//   } 
 
-  const Decrease = () =>{
-    if( count > 0) {
-      setCount(count - 1);
-    }else {
-      setCount(0);
-    }
-  }
+//   const Decrease = () =>{
+//     if( count > 0) {
+//       setCount(count - 1);
+//     }else {
+//       setCount(0);
+//     }
+//   }
 
-  const Default = () => {
-    setCount(initial);
-    console.log("I'm here");
-  }
+//   const Default = () => {
+//     setCount(initial);
+//     console.log("I'm here");
+//   }
+//   return(
+//     <div className="wrapper">
+//       <p>You clicked {count} times</p>
+//       <button className = "Increase" onClick ={Increase}>Click Me!</button>
+//       <button className = "Increase" onClick ={Decrease}>Unclick Me!</button>
+//       <button className = "Increase" onClick ={ Default}>Default</button>
+//     </div>
+//   )
+// }
+
+function App(){
   return(
-    <div className="wrapper">
-      <p>You clicked {count} times</p>
-      <button className = "Increase" onClick ={Increase}>Click Me!</button>
-      <button className = "Increase" onClick ={Decrease}>Unclick Me!</button>
-      <button className = "Increase" onClick ={ Default}>Default</button>
+    <div>
+      <h1>MY TO DO LIST</h1>
+      <div className ="userinput">
+        <input type="text" id="newItem" placeholder="New item..." maxlength="30"/>
+        <button id="add"><i class="fas fa-plus"></i></button>
+      </div>
+      <ul id="todolist">
+        <li className="myList"> Hit the Gym <span className="close">&#xd7;</span></li>
+        <li className="myList"> Hit the Gym <span className="close">&#xd7;</span></li>
+      </ul>
+      <div className= "buttons">
+        <button id="clear-all" ><i className="fas fa-trash"></i></button>
+      </div>
     </div>
   )
 }
+
+
 export default App;
 
 
